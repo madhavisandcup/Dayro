@@ -62,6 +62,14 @@ body {
     color: #ffffff;
 }
 
+body.light-mode .main-logo svg path {
+    fill: #000000;
+}
+
+body.dark-mode .main-logo svg path {
+    fill: #ffffff;
+}
+
 h2 {
     font-size: clamp(32px, 4.166vw, 80px);
     line-height: 1;
