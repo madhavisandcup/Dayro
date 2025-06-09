@@ -8,7 +8,6 @@ var x = setInterval(function () {
     document.getElementById("countdownDays").innerHTML = days + " ";
 });
 
-
 // light mode or dark mode js //   
 function setThemeByTime() {
     // Set your fixed sunrise and sunset time (24-hour format)
@@ -28,6 +27,68 @@ function setThemeByTime() {
 }
 
 setThemeByTime();
-
 // Optional: check every 5 minutes to update if needed
 setInterval(setThemeByTime, 5 * 60 * 1000);
+
+
+
+
+// swipe words animation //
+const scrollingWord = document.querySelector(".scrolling_word");
+const words = document.querySelectorAll(".scrolling_word .inner_word");
+const totalWords = words.length;
+
+function getWordSize() {
+    if (window.innerWidth <= 768) {
+        return scrollingWord.offsetWidth; // full container width
+    } else {
+        return words[0].offsetHeight;
+    }
+}
+
+let tl = gsap.timeline({ repeat: -1, paused: true });
+let wordSize = getWordSize();
+
+function buildTimeline() {
+    tl.clear();
+    wordSize = getWordSize();
+    gsap.set(scrollingWord, { x: 0, y: 0 });
+
+    if (window.innerWidth <= 768) {
+        // Mobile: horizontal
+        for (let i = 1; i < totalWords; i++) {
+            tl.to(scrollingWord, {
+                x: -i * wordSize,
+                duration: 0.8,
+                ease: "power3.inOut",
+                delay: 2,
+            });
+        }
+        tl.set(scrollingWord, { x: 0 });
+    } else {
+        // Desktop: vertical
+        for (let i = 1; i < totalWords; i++) {
+            tl.to(scrollingWord, {
+                y: -i * wordSize,
+                duration: 0.8,
+                ease: "power3.inOut",
+                delay: 2,
+            });
+        }
+        tl.set(scrollingWord, { y: 0 });
+    }
+}
+
+// Initialize and play
+buildTimeline();
+tl.play();
+
+// Rebuild on resize
+let resizeTimeout;
+window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        buildTimeline();
+        tl.play();
+    }, 200);
+});
