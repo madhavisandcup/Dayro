@@ -280,8 +280,8 @@ h3 {
 
 @media (max-width: 1399px) {
     .change_word {
-        height: 6.4rem;
-        margin-bottom: 12px;
+        height: 6.9rem;
+        /* margin-bottom: 12px; */
     }
 
 }
