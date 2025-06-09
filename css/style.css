@@ -258,12 +258,13 @@ h3 {
         padding: 80px 30px 120px;
     }
 
-    .change_word {
-        height: 7rem;
-    }
 }
 
 @media (max-width: 1500px) {
+    .change_word {
+        height: 8rem;
+    }
+
     .coming-soon-wrapper {
         padding: 60px 30px 100px;
     }
@@ -272,11 +273,16 @@ h3 {
 @media (max-width: 1399px) {
     .change_word {
         height: 6.4rem;
+        margin-bottom: 12px;
     }
 
 }
 
 @media (max-width: 1180px) {
+    .change_word {
+        margin-bottom: 0;
+    }
+
     .middle-content h2 {
         align-items: baseline;
         gap: 10px;
@@ -284,6 +290,10 @@ h3 {
 }
 
 @media (max-width: 991px) {
+    .change_word {
+        height: 4rem;
+    }
+
     .logo-width {
         height: auto;
     }
