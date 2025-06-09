@@ -342,7 +342,7 @@ h3 {
         display: inline-block;
         width: 100%;
         flex-shrink: 0;
-        line-height: 1;
+        line-height: 1.2;
         text-align: center;
     }
 
