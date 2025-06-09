@@ -80,6 +80,10 @@ h3 {
     line-height: 1;
 }
 
+.ls_1 {
+    letter-spacing: 1px;
+}
+
 .highlight {
     /* font-family: 'Outfit-ExtraLight'; */
     font-size: clamp(48px, 6.666vw, 128px);
@@ -97,14 +101,16 @@ h3 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
+    gap: 120px;
     margin: 0 auto;
-    padding: 100px 30px 170px;
+    padding: 30px;
 }
 
 .logo-width {
     width: 17vw;
+    height: auto;
 }
 
 .middle-content h2 {
@@ -255,7 +261,8 @@ h3 {
 
 @media (max-width: 1600px) {
     .coming-soon-wrapper {
-        padding: 80px 30px 120px;
+        padding: 30px;
+        gap: 80px;
     }
 
 }
@@ -266,8 +273,9 @@ h3 {
     }
 
     .coming-soon-wrapper {
-        padding: 60px 30px 100px;
+        gap: 70px;
     }
+
 }
 
 @media (max-width: 1399px) {
@@ -298,17 +306,13 @@ h3 {
         height: auto;
     }
 
-    .coming-soon-wrapper {
-        padding: 150px 30px 150px;
-    }
 }
 
 @media (max-width: 575px) {
     .coming-soon-wrapper {
         height: 100svh;
-        padding: 100px 30px 150px;
         justify-content: center;
-        gap: 80px;
+        gap: 100px;
     }
 
     .middle-content h2 {
