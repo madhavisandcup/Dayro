@@ -85,7 +85,6 @@ h3 {
 }
 
 .highlight {
-    /* font-family: 'Outfit-ExtraLight'; */
     font-size: clamp(48px, 6.666vw, 128px);
     font-weight: 600;
 }
@@ -116,8 +115,8 @@ h3 {
 .middle-content h2 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 12px;
+    align-items: baseline;
+    gap: 14px;
 }
 
 .change_word {
@@ -126,9 +125,9 @@ h3 {
     position: relative;
     padding: 0;
     margin: 0;
+    /* max-width: 28rem; */
     max-width: 35rem;
     height: 2em;
-    /* height: 9.4rem; */
     vertical-align: bottom;
 
 }

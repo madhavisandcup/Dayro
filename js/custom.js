@@ -1,5 +1,5 @@
 // Countdown Days js //
-var countDownDate = new Date("september 20, 2025").getTime();
+var countDownDate = new Date("august 27, 2025").getTime();
 var x = setInterval(function () {
     var now = new Date().getTime();
     var distance = countDownDate - now;
