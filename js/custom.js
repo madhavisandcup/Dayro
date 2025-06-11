@@ -92,3 +92,33 @@ window.addEventListener("resize", () => {
         tl.play();
     }, 200);
 });
+
+
+// Loader //
+
+window.addEventListener("load", function () {
+const preloader = document.querySelector(".preloader");
+const loaderText = document.querySelector(".preloader_inner");
+
+let count = 0;
+const duration = 3000; // total duration of loading (in ms)
+const intervalTime = 30; // update every 30ms
+
+const interval = setInterval(() => {
+    count++;
+    loaderText.textContent = count + "%";
+
+    if (count >= 100) {
+    clearInterval(interval);
+
+    // Start fading out after reaching 100%
+    preloader.classList.add("hide-preloader");
+
+    // Remove from DOM after fade transition
+    setTimeout(() => {
+        preloader.style.display = "none";
+    }, 500); // match with CSS transition
+    }
+}, duration / 100); // divide total time by 100 steps
+});
+
